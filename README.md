@@ -30,20 +30,47 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 <!-- 子应用的改造 -->
 
-1. `router`文件的修改
+1. `router`文件最终修改为
 
    ```java
+   import Vue from 'vue'
+   import VueRouter from 'vue-router'
+   import HomeView from '../views/Home.vue'
+   
+   Vue.use(VueRouter)
+   
+   const routes = [
+     {
+       path: '/',
+       name: 'home',
+       component: HomeView
+     },
+     {
+       path: '/about',
+       name: 'about',
+       component: () => import('../views/About.vue')
+     },
+     {
+       path: '/test',
+       name: 'test',
+       component: () => import('../views/Test.vue')
+     }
+   ]
+   
    // 删除
-    const router = new VueRouter({
+   /* const router = new VueRouter({
      mode: 'history',
      base: process.env.BASE_URL,
      routes
-   }) 
+   }) */
+   
+   export default routes
+   
    ```
 
    
 
-   2.main.js 最终修改为
+   2.main.js 最终修改
 
    ```javascript
    import Vue from 'vue'
@@ -111,7 +138,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
    
    ```
 
-   3.`vue.config.js`修改为
+   3.`vue.config.js`最终修改为
 
    ```javascript
    const { name } = require('./package.json')
