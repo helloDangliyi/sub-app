@@ -1,6 +1,6 @@
 <template>
   <div class="sub-app">
-    我是子应用
+    Test我是子应用
   </div>
 </template>
 

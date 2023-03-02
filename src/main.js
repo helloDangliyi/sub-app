@@ -2,11 +2,16 @@ import Vue from 'vue'
 import App from './App.vue'
 import store from './store'
 
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
+
 // 1.引入routes,VueRouter
 import VueRouter from 'vue-router'
 import routes from './router'
 
 Vue.config.productionTip = false
+
+Vue.use(ElementUI)
 
 // 2.删除
 /* new Vue({
