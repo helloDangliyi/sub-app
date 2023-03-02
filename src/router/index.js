@@ -1,25 +1,14 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import HomeView from '../views/Home.vue'
+import normalPage from './module/normalPage'
+import throwPage from './module/throwPage'
 
 Vue.use(VueRouter)
 
+// 需要把配出页面的路由和子应用正常的路由整合
 const routes = [
-  {
-    path: '/',
-    name: 'home',
-    component: HomeView
-  },
-  {
-    path: '/about',
-    name: 'about',
-    component: () => import('../views/About.vue')
-  },
-  {
-    path: '/test',
-    name: 'test',
-    component: () => import('../views/Test.vue')
-  }
+  normalPage,
+  throwPage
 ]
 
 // 删除

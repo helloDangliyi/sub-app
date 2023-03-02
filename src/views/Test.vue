@@ -7,7 +7,9 @@
 <script>
 
 export default {
-
+  mounted () {
+    console.log(this.$route)
+  }
 }
 
 </script>
@@ -16,5 +18,6 @@ export default {
 .sub-app {
   cursor: pointer;
   background-color: aqua;
+  width:200px;
 }
 </style>
