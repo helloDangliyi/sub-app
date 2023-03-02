@@ -8,17 +8,17 @@ export default {
   children: [
     {
       path: '/',
-      name: 'home',
+      name: 'homeApplication',
       component: () => import('@/views/Home.vue')
     },
     {
-      path: '/about',
-      name: 'about',
+      path: '/aboutApplication',
+      name: 'aboutApplication',
       component: () => import('@/views/About.vue')
     },
     {
-      path: '/test',
-      name: 'test',
+      path: '/testApplication',
+      name: 'testApplication',
       component: () => import('@/views/Test.vue')
     }
   ]

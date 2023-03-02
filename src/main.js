@@ -13,6 +13,9 @@ Vue.config.productionTip = false
 
 Vue.use(ElementUI)
 
+const token = localStorage.getItem('token')
+console.log('app1中打印token：', token)
+
 // 2.删除
 /* new Vue({
   router,
