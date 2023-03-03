@@ -7,10 +7,13 @@
         <el-menu-item index="/">
           <span slot="title">Home</span>
         </el-menu-item>
-        <el-menu-item index="/about">
+        <el-menu-item index="/aboutApplication">
           <span slot="title">About</span>
         </el-menu-item>
-        <el-menu-item index="/test">
+        <el-menu-item index="/baiduMap">
+          <span slot="title">BaiduMap</span>
+        </el-menu-item>
+        <el-menu-item index="/testApplication">
           <span slot="title">Test</span>
         </el-menu-item>
       </el-menu>

@@ -20,6 +20,11 @@ export default {
       path: '/testApplication',
       name: 'testApplication',
       component: () => import('@/views/Test.vue')
+    },
+    {
+      path: '/baiduMap',
+      name: 'BaiduMap',
+      component: () => import('@/views/BaiduMap.vue')
     }
   ]
 }

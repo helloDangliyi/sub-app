@@ -19,12 +19,20 @@
 </template>
 
 <script>
-
+import store from '@/store'
 export default {
   methods: {
+
+    // 一般是跳转到其他子应用
     toJump () {
       console.log('子应用this.$router: ', this.$router)
-      this.$router.push('/about')
+      // this.$router.push('/about') 无法跳转成功
+
+      // history 模式时，通过 history.pushState() 方式跳转
+      // this.$qiankunJump('/about')
+
+      // 将主应用的路由实例通过 props 传给子应用，子应用用这个路由实例跳转
+      this.$qiankunJump('/about', store.state.router)
     }
   }
 }

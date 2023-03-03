@@ -5,13 +5,27 @@ import store from './store'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 
+import common from '@/utils/common.js'
+
 // 1.引入routes,VueRouter
 import VueRouter from 'vue-router'
 import routes from './router'
 
+import BaiduMap from 'vue-baidu-map'
+
 Vue.config.productionTip = false
 
 Vue.use(ElementUI)
+
+Vue.use(BaiduMap, {
+  // ak 是在百度地图开发者平台申请的密钥 详见 http://lbsyun.baidu.com/apiconsole/key */
+  ak: 'TWzwa8UKKbmxV2aaFjGaczy06xzZV3ON'
+})
+
+// 全局工具方法
+Object.keys(common).forEach((item) => {
+  Vue.prototype[`$${item}`] = common[item]
+})
 
 const token = localStorage.getItem('token')
 console.log('app1中打印token：', token)
@@ -60,6 +74,9 @@ export async function bootstrap () {
 export async function mount (props) {
   // props 包含主应用传递的参数  也包括为子应用 创建的节点信息
   console.log('[vue] props from main framework', props)
+  if (props.router) {
+    store.state.router = props.router
+  }
   render(props)
 }
 
